@@ -44,7 +44,7 @@ export const IndexPage: FC = () => {
           </>
         ) : (
           <>
-            You are not have access to the dashboard. Current User ID: {userId}
+            You are not have access to the dashboard.. Current User ID: {userId}
           </>
         )}
       </div>
