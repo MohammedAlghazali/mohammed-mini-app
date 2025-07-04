@@ -14,6 +14,13 @@ export const IndexPage: FC = () => {
           header="Features"
           footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
         >
+          <iframe
+            src="https://sharing.clickup.com/14288173/l/h/dm19d-9474/dfafee9a0e06c10"
+            width="100%"
+            height="100%"
+            style={{ border: 'none' }}
+            allowFullScreen
+          ></iframe>
           <Link to="/ton-connect">
             <Cell
               before={<Image src={tonSvg} style={{ backgroundColor: '#007AFF' }}/>}
