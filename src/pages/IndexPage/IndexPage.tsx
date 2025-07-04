@@ -1,15 +1,51 @@
-import { Section, Cell, Image, List } from '@telegram-apps/telegram-ui';
-import type { FC } from 'react';
+import { type FC, useMemo } from "react";
 
-import { Link } from '@/components/Link/Link.tsx';
-import { Page } from '@/components/Page.tsx';
+import {
+  initDataRaw as _initDataRaw,
+  initDataState as _initDataState,
+  useSignal,
+} from "@telegram-apps/sdk-react";
 
-import tonSvg from './ton.svg';
+// import { Link } from '@/components/Link/Link.tsx';
+import { Page } from "@/components/Page.tsx";
+// import { DisplayData, type DisplayDataRow } from '@/components/DisplayData/DisplayData.tsx';
+
+// import tonSvg from './ton.svg';
+
+// function getUserRows(user: User): DisplayDataRow[] {
+//   return Object.entries(user).map(([title, value]) => ({ title, value }));
+// }
 
 export const IndexPage: FC = () => {
+  const initDataState = useSignal(_initDataState);
+
+  // const userRows = useMemo<DisplayDataRow[] | undefined>(() => {
+  //   return initDataState && initDataState.user
+  //     ? getUserRows(initDataState.user)
+  //     : undefined;
+  // }, [initDataState]);
+
+  const userId = useMemo(() => {
+    return initDataState?.user?.id ? String(initDataState.user.id) : undefined;
+  }, [initDataState]);
+
   return (
     <Page back={false}>
-      <List>
+      {userId === "7678017004" ? (
+        <>
+          <iframe
+            src="https://sharing.clickup.com/14288173/l/h/dm19d-9474/dfafee9a0e06c10"
+            width="100%"
+            height="100%"
+            style={{ border: "none" }}
+            allowFullScreen
+          ></iframe>
+        </>
+      ) : (
+        userId
+      )}
+
+      {/* <List>
         <Section
           header="Features"
           footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
@@ -44,7 +80,7 @@ export const IndexPage: FC = () => {
             <Cell subtitle="Telegram application palette information">Theme Parameters</Cell>
           </Link>
         </Section>
-      </List>
+      </List> */}
     </Page>
   );
 };
