@@ -13,6 +13,7 @@ export function App() {
     <AppRoot
       appearance={isDark ? 'dark' : 'light'}
       platform={['macos', 'ios'].includes(lp.tgWebAppPlatform) ? 'ios' : 'base'}
+      style={{ height: '100%' }}
     >
       <HashRouter>
         <Routes>

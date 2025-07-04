@@ -31,20 +31,23 @@ export const IndexPage: FC = () => {
 
   return (
     <Page back={false}>
-      {userId === "7678017004" ? (
-        <>
-          <iframe
-            src="https://sharing.clickup.com/14288173/l/h/dm19d-9474/dfafee9a0e06c10"
-            width="100%"
-            height="100%"
-            style={{ border: "none" }}
-            allowFullScreen
-          ></iframe>
-        </>
-      ) : (
-        userId
-      )}
-
+      <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+        {true ? (
+          <>
+            <iframe
+              src="https://sharing.clickup.com/14288173/l/h/dm19d-9474/dfafee9a0e06c10"
+              width="100%"
+              height="100%"
+              style={{ border: "none" }}
+              allowFullScreen
+            ></iframe>
+          </>
+        ) : (
+          <>
+            You are not have access to the dashboard. Current User ID: {userId}
+          </>
+        )}
+      </div>
       {/* <List>
         <Section
           header="Features"
